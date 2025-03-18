@@ -1,0 +1,16 @@
+# Python code for dataset cleaning
+import pandas as pd
+
+# Load the dataset
+file_path = r"C:\Users\Public\Documents\Property_Profile_Management_System_Dataset.csv"
+df = pd.read_csv(file_path)
+
+# Drop duplicate rows based on the primary key
+df_cleaned = df.drop_duplicates(subset=["real_property_unique_identifier"])
+
+# Save the cleaned dataset
+cleaned_path = r"C:\Users\Public\Documents\Property_Profile_Management_System_Dataset_CLEANED.csv"
+df_cleaned.to_csv(cleaned_path, index=False)
+
+# Display count of removed duplicates
+print(f"Removed {len(df) - len(df_cleaned)} duplicate rows.")
