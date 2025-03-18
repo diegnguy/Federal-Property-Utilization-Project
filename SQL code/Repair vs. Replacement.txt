@@ -1,0 +1,8 @@
+SELECT property_id, property_name, state, repair_needs, replacement_value, 
+       CASE 
+           WHEN repair_needs > (replacement_value * 0.5) THEN 'Consider Replacement'
+           WHEN repair_needs <= (replacement_value * 0.5) AND repair_needs > 0 THEN 'Repair Recommended'
+           ELSE 'No Action Needed'
+       END AS repair_decision
+FROM public_final_dataset
+ORDER BY state;

@@ -1,0 +1,6 @@
+SELECT agency_name, 
+       COUNT(property_id) AS total_properties, 
+       ROUND(AVG(utilization_rate) * 100, 2) AS avg_utilization_rate
+FROM public_final_dataset
+GROUP BY agency_name
+ORDER BY avg_utilization_rate ASC;

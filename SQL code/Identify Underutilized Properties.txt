@@ -1,0 +1,4 @@
+SELECT property_id, property_name, state, utilization_rate, owned_maintenance_cost, replacement_value
+FROM public_final_dataset
+WHERE utilization_rate < 0.5
+ORDER BY owned_maintenance_cost DESC;

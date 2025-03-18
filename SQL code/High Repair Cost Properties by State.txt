@@ -1,0 +1,10 @@
+SELECT state, 
+       property_id, 
+       property_name, 
+       repair_needs, 
+       replacement_value, 
+       ROUND((repair_needs / NULLIF(replacement_value, 0)) * 100, 2) AS repair_to_value_pct
+FROM public_final_dataset
+WHERE repair_needs > 0
+ORDER BY repair_to_value_pct DESC
+LIMIT 10;

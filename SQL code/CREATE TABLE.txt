@@ -1,0 +1,21 @@
+CREATE TABLE federal_real_property (
+    real_property_unique_identifier TEXT PRIMARY KEY,
+    real_property_type TEXT,
+    real_property_type_code INT,
+    real_property_use TEXT,
+    real_property_use_code INT,
+    utilization TEXT,
+    utilization_code TEXT,
+    consecutive_years_underutilized INT,
+    date_start_of_underutilized DATE,
+    asset_status TEXT,
+    state_name TEXT,
+    city_name TEXT,
+    zip_code TEXT,
+    latitude NUMERIC,
+    longitude NUMERIC,
+    owned_operations_cost NUMERIC,
+    owned_maintenance_cost NUMERIC,
+    replacement_value NUMERIC,
+    repair_needs NUMERIC
+);

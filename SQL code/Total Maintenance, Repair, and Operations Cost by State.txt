@@ -1,0 +1,8 @@
+SELECT state, 
+       SUM(owned_maintenance_cost) AS total_maintenance_cost, 
+       SUM(repair_needs) AS total_repair_needs, 
+       SUM(operations_cost) AS total_operations_cost, 
+       SUM(replacement_value) AS total_replacement_value
+FROM public_final_dataset
+GROUP BY state
+ORDER BY total_maintenance_cost DESC;
